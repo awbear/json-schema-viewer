@@ -146,6 +146,7 @@ export const renderProp = ({
 
   const vt = validationText(prop);
   const showVt = !expanded && vt;
+  // const showVt = true
 
   if (required || vt) {
     requiredElem = (
@@ -172,9 +173,9 @@ export const renderProp = ({
         py={7}
         key={position}
         level={level}
-        cursor={vt || expandable ? 'pointer' : 'default'}
+        cursor={expandable ? 'pointer' : 'auto'}
         onClick={() => {
-          if (vt || expandable) {
+          if (expandable) {
             toggleExpandRow(rowKey, !expanded);
           }
         }}
@@ -188,7 +189,7 @@ export const renderProp = ({
         <Box flex="1 1 0%">
           <Flex alignItems="baseline">
             {name && name !== 'root' ? <Box mr={11}>{name}</Box> : null}
-
+            {/* {name === 'root' ? <span style={{whiteSpace: 'pre-wrap'}}>type: </span> : null} */}
             {!isEmpty(typeElems) && <div>{typeElems}</div>}
           </Flex>
 
