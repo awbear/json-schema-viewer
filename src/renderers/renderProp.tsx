@@ -117,7 +117,7 @@ export const renderProp = ({
   if (!isEmpty(types)) {
     typeElems = types.reduce((acc: ReactNode[], type: string, i) => {
       acc.push(
-        <RowType as="span" type={type} key={i}>
+        <RowType as="span" type={type} key={i} style={{textDecoration: 'underline'}}>
           {type === 'array' && childPropType && childPropType !== 'array' ? `array[${childPropType}]` : type}
         </RowType>
       );
@@ -133,7 +133,7 @@ export const renderProp = ({
       return acc;
     }, []);
   } else if (prop.$ref) {
-    typeElems.push(<RowType as="span" type="$ref" key="prop-ref">{`{${prop.$ref}}`}</RowType>);
+    typeElems.push(<RowType as="span" type="$ref" key="prop-ref" style={{textDecoration: 'underline'}}>{`{${prop.$ref}}`}</RowType>);
   } else if (prop.__error || isBasic) {
     typeElems.push(
       <Box as="span" key="no-types" color={theme.canvas.error}>
