@@ -31,7 +31,6 @@ export const rowStyles = ({ level }: IRowProps) => {
       ...(level !== undefined && { paddingLeft: DEFAULT_PADDING + GUTTER_WIDTH * level }),
     },
     css`
-      user-select none;
       line-height: 1rem;
 
       &:nth-of-type(even) {

@@ -117,7 +117,7 @@ export const renderProp = ({
   if (!isEmpty(types)) {
     typeElems = types.reduce((acc: ReactNode[], type: string, i) => {
       acc.push(
-        <RowType as="span" type={type} key={i}>
+        <RowType as="span" type={type} key={i} style={{textDecoration: 'underline'}}>
           {type === 'array' && childPropType && childPropType !== 'array' ? `array[${childPropType}]` : type}
         </RowType>
       );
@@ -133,7 +133,7 @@ export const renderProp = ({
       return acc;
     }, []);
   } else if (prop.$ref) {
-    typeElems.push(<RowType as="span" type="$ref" key="prop-ref">{`{${prop.$ref}}`}</RowType>);
+    typeElems.push(<RowType as="span" type="$ref" key="prop-ref" style={{textDecoration: 'underline'}}>{`{${prop.$ref}}`}</RowType>);
   } else if (prop.__error || isBasic) {
     typeElems.push(
       <Box as="span" key="no-types" color={theme.canvas.error}>
@@ -146,6 +146,7 @@ export const renderProp = ({
 
   const vt = validationText(prop);
   const showVt = !expanded && vt;
+  // const showVt = true
 
   if (required || vt) {
     requiredElem = (
@@ -172,9 +173,9 @@ export const renderProp = ({
         py={7}
         key={position}
         level={level}
-        cursor={vt || expandable ? 'pointer' : 'default'}
+        cursor={expandable ? 'pointer' : 'auto'}
         onClick={() => {
-          if (vt || expandable) {
+          if (expandable) {
             toggleExpandRow(rowKey, !expanded);
           }
         }}
@@ -188,7 +189,7 @@ export const renderProp = ({
         <Box flex="1 1 0%">
           <Flex alignItems="baseline">
             {name && name !== 'root' ? <Box mr={11}>{name}</Box> : null}
-
+            {/* {name === 'root' ? <span style={{whiteSpace: 'pre-wrap'}}>type: </span> : null} */}
             {!isEmpty(typeElems) && <div>{typeElems}</div>}
           </Flex>
 
