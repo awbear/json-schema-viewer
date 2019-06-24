@@ -206,7 +206,7 @@ export const renderProp = ({
 
             {showInheritedFrom ? <MutedText>{`$ref:${prop.__inheritedFrom.name}`}</MutedText> : null}
 
-            {expanded && <PropValidations prop={prop} />}
+            {<PropValidations prop={prop} />}
           </Box>
         ) : null}
       </Row>
