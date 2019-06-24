@@ -20,7 +20,7 @@
     "node": ">=8.3.0"
   },
   "scripts": {
-    "build": "sl-scripts build",
+    "build": "rollup --config",
     "build.docs": "build-storybook -c .storybook -o docs-auto",
     "commit": "git-cz",
     "lint": "sl-scripts lint",
@@ -58,7 +58,10 @@
     "jest-enzyme": "7.0.x",
     "react": "16.7.0-alpha.2",
     "react-dom": "16.7.0-alpha.2",
-    "typescript": "3.2.2"
+    "typescript": "3.2.2",
+    "webpack-cli": "^3.3.5",
+    "awesome-typescript-loader": "^5.2.1",
+    "css-loader": "^3.0.0"
   },
   "lint-staged": {
     "*.{ts,tsx}$": [

@@ -1,2 +1,2 @@
 export * from './JsonSchemaViewer';
-export { ThemeProvider } from './theme';
+export { ThemeProvider, useTheme, themeZones } from './theme';
