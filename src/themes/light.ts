@@ -34,4 +34,6 @@ export const light: IJSONSchemaViewerTheme = {
     string: '#008080',
     $ref: '#8a2be2',
   },
+  propertyKeyStyle: {
+  }
 };

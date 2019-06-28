@@ -1,6 +1,6 @@
 import { Dictionary, ISchema } from '@stoplight/types';
 import { ICustomTheme } from '@stoplight/ui-kit';
-import { ReactNodeArray } from 'react';
+import { ReactNodeArray, CSSProperties } from 'react';
 
 export interface ICommonProps {
   schemas: any;
@@ -52,4 +52,6 @@ export interface IJSONSchemaViewerTheme extends ICustomTheme {
   divider: {
     bg: string;
   };
+
+  propertyKeyStyle?: CSSProperties;
 }

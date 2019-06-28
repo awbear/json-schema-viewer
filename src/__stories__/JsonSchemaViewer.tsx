@@ -11,7 +11,7 @@ storiesOf('JsonSchemaViewer', module)
   .addDecorator(withKnobs)
   .add('default', () => (
     <JsonSchemaViewer
-      css={{ fontFamily: 'monospace' }}
+      css={{ fontFamily: 'monospace', fontSize: '14px' }}
       name={text('name', 'name')}
       schemas={object('schemas', {})}
       schema={schema}
@@ -22,7 +22,7 @@ storiesOf('JsonSchemaViewer', module)
   ))
   .add('custom schema', () => (
     <JsonSchemaViewer
-      css={{ fontFamily: 'monospace' }}
+      css={{ fontFamily: 'Helvetica Neue', fontSize: '14px'}}
       name={text('name', 'name')}
       schemas={object('schemas', {})}
       schema={object('schema', nestedSchema)}

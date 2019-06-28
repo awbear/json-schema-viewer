@@ -74,5 +74,9 @@ export const zones = {
             string: '#008080',
             $ref: '#8a2be2',
           },
+          propertyKeyStyle: {
+            // fontFamily: ['Lucida Console','Monaco','monospace'],
+            fontFamily: '"Lucida Console", Monaco, monospace',
+          }
         },
 };

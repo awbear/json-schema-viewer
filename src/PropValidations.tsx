@@ -4,8 +4,10 @@ import * as React from 'react';
 import { MutedText } from './common/MutedText';
 import { isCombiner } from './util/isCombiner';
 import { pickValidations } from './util/pickValidations';
+import { useTheme } from './theme';
 
 export const PropValidations: React.FunctionComponent<{ prop: ISchema }> = ({ prop }) => {
+  const theme = useTheme();
   if (!isCombiner(prop)) {
     const validations = pickValidations(prop);
 
@@ -29,9 +31,11 @@ export const PropValidations: React.FunctionComponent<{ prop: ISchema }> = ({ pr
           }
 
           if (type !== 'object') {
+            let style = ['enum', 'example'].indexOf(k) !== -1 ? theme.propertyKeyStyle : undefined;
             return (
               <div key={k}>
-                <MutedText as="b">{k}:</MutedText> {v}
+                <MutedText as="b">{k}:</MutedText>
+                <span style={style}> {v}</span>
               </div>
             );
           }

@@ -145,14 +145,13 @@ export const renderProp = ({
   let requiredElem;
 
   const vt = validationText(prop);
-  const showVt = !expanded && vt;
-  // const showVt = true
+  // const showVt = !expanded && vt;
 
   if (required || vt) {
     requiredElem = (
       <Box fontSize="0.75rem">
-        {showVt ? <MutedText as="span">{vt}</MutedText> : null}
-        {showVt && required ? <MutedText as="span"> + </MutedText> : null}
+        {/* {showVt ? <MutedText as="span">{vt}</MutedText> : null}
+        {showVt && required ? <MutedText as="span"> + </MutedText> : null} */}
         {required ? (
           <Box as="span" fontWeight={700}>
             required
@@ -189,7 +188,7 @@ export const renderProp = ({
 
         <Box flex="1 1 0%">
           <Flex alignItems="baseline">
-            {name && name !== 'root' ? <Box mr={11}>{name}</Box> : null}
+            {name && name !== 'root' ? <Box mr={11} style={theme.propertyKeyStyle}>{name}</Box> : null}
             {/* {name === 'root' ? <span style={{whiteSpace: 'pre-wrap'}}>type: </span> : null} */}
             {!isEmpty(typeElems) && <div>{typeElems}</div>}
           </Flex>
