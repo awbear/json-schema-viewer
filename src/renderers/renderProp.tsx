@@ -173,6 +173,7 @@ export const renderProp = ({
         py={7}
         key={position}
         level={level}
+        enableHover={expandable}
         cursor={expandable ? 'pointer' : 'auto'}
         onClick={() => {
           if (expandable) {
