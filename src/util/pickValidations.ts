@@ -5,11 +5,11 @@ import omit = require('lodash/omit');
 export const pickValidations = (prop: any) => {
   const validations = {};
   if (prop.enum && prop.enum.join) {
-    validations['Allowed Values'] = prop.enum.join(', ');
+    validations['enum'] = prop.enum.join(', ');
   } else if (prop.enum) {
-    validations['Allowed Values'] = prop.enum;
+    validations['enum'] = prop.enum;
   } else if (prop.items && !isEmpty(prop.items.enum)) {
-    validations['Allowed Values'] = prop.items.enum.join(', ');
+    validations['enum'] = prop.items.enum.join(', ');
   }
 
   merge(
